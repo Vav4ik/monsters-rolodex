@@ -1,9 +1,14 @@
-import React from "react";
+import { FC } from "react";
+import { Monster } from "../../App";
 import Card from "./Card";
 
 import "./CardList.css";
 
-const CardList = ({ monsters }) => (
+type CardListProps = {
+  monsters: Monster[];
+};
+
+const CardList: FC<CardListProps> = ({ monsters }) => (
   <div className="card-list">
     {monsters.map((monster) => {
       return <Card key={monster.id} monster={monster} />;

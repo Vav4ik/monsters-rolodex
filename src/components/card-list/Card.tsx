@@ -1,9 +1,14 @@
-import React from "react";
+import { FC } from "react";
 
 import "./Card.css";
+import { Monster } from "../../App";
 
-const Card = (props) => {
-  const { id, name, email } = props.monster;
+type CardProps = {
+  monster: Monster;
+};
+
+const Card: FC<CardProps> = ({ monster }) => {
+  const { id, name, email } = monster;
   return (
     <div className="card-container">
       <img
